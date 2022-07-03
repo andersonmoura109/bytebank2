@@ -63,8 +63,8 @@ class ContactFormState extends State<ContactForm> {
                         int.tryParse(_accountNumberController.text);
 
                     if (fullName.isNotEmpty && accountNumber != null) {
-                      final Contact contact =
-                          Contact(name: fullName, account: accountNumber);
+                      final Contact contact = Contact(
+                          id: 0, name: fullName, account: accountNumber);
 
                       Navigator.pop(context, contact);
                     }
