@@ -1,18 +1,16 @@
-import 'package:bytebank2/database/database.dart';
-import 'package:bytebank2/models/contact.dart';
 import 'package:bytebank2/screens/dashboard.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(const Bytebank());
-  save(
-    Contact(
-      name: 'Anderson',
-      account: 1989,
-    ),
-  )?.then((id) {
-    findAll().then((contacts) => debugPrint(contacts.toString()));
-  });
+  // save(
+  //   Contact(
+  //     name: 'Anderson',
+  //     account: 1989,
+  //   ),
+  // )?.then((id) {
+  //   findAll().then((contacts) => debugPrint(contacts.toString()));
+  // });
 }
 
 class Bytebank extends StatelessWidget {
