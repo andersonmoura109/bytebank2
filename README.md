@@ -1,16 +1,7 @@
 # bytebank2
 
-A new Flutter project.
+This project is based in a simulated bank where is possible to register a contact with a account.
 
-## Getting Started
+The application use a internal database created with sqflite.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Project was created as part Alura course.
