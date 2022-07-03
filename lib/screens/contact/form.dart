@@ -1,7 +1,19 @@
+import 'package:bytebank2/models/contact.dart';
 import 'package:flutter/material.dart';
 
-class ContactForm extends StatelessWidget {
+class ContactForm extends StatefulWidget {
   const ContactForm({super.key});
+
+  @override
+  State<StatefulWidget> createState() {
+    return ContactFormState();
+  }
+}
+
+class ContactFormState extends State<ContactForm> {
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _accountNumberController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +28,7 @@ class ContactForm extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
               child: TextField(
+                controller: _fullNameController,
                 decoration: InputDecoration(
                   labelText: 'Full name',
                   border: OutlineInputBorder(
@@ -28,6 +41,7 @@ class ContactForm extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 8.0),
               child: TextField(
+                controller: _accountNumberController,
                 decoration: InputDecoration(
                   labelText: 'Account number',
                   border: OutlineInputBorder(
@@ -43,7 +57,18 @@ class ContactForm extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(top: 16.0),
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    final String fullName = _fullNameController.text;
+                    final int? accountNumber =
+                        int.tryParse(_accountNumberController.text);
+
+                    if (fullName.isNotEmpty && accountNumber != null) {
+                      final Contact contact =
+                          Contact(name: fullName, account: accountNumber);
+
+                      Navigator.pop(context, contact);
+                    }
+                  },
                   child: const Text('Create'),
                 ),
               ),
